@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'CobraKai';
+    src: url('../fonts/cobra-kai.ttf');
+}
+@font-face {
+    font-family: 'BebasKai';
+    src: url('../fonts/BebasKai.ttf');
+}
+/*
+Yellow: f4e150;
+Red: fc2930;
+*/
+.intro-container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	cursor: pointer;
+}
+.intro-container .text-wrapper{
+	position: absolute;
+	width: auto;
+    height: auto;
+	color: white;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	transform: translate(-50%, -50%);
+	z-index: 4;
+}
+.intro-container .text-wrapper h1{
+	font-family: 'CobraKai';
+	font-size: 80px;
+	/*color: #05090c;*/
+	color: rgba(255,255,255,1);
+	margin-top: -30px;
+	transition: color 1s;
+}
+.intro-container:hover .text-wrapper h1{
+	color: #fc2930;
+}
+.intro-container .text-wrapper h2{
+	font-family: 'BebasKai';
+	margin: 0 auto;
+	font-size: 30px;
+	letter-spacing: -0.05em;
+	color: rgba(255,255,255,.8);
+	transition: color 1s;
+}
+.intro-container:hover .text-wrapper h2{
+	color: #f4e150;
+}
+
+.intro-container > div{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center center;
+}
+.colored{
+	background-image: url("/images/jungle-sun-background.jpg");
+	z-index: 1;
+}
+.gray{
+	background-color: rgba(0,0,0,.6);
+	opacity: 1;
+	transition: opacity 1s;
+	z-index: 3;
+}
+.intro-container:hover .gray{
+	opacity: 0;
+}

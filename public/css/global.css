@@ -6,6 +6,13 @@
     font-family: 'BebasKai';
     src: url('../fonts/BebasKai.ttf');
 }
+@font-face {
+    font-family: 'Plantin';
+    src: url('../fonts/Plantin.otf');
+}
+html, body{
+	height: 100%;
+}
 /*
 Yellow: f4e150;
 Red: fc2930;
@@ -13,9 +20,10 @@ Red: fc2930;
 .intro-container {
 	width: 100%;
 	height: 100%;
-	position: absolute;
-	cursor: pointer;
+	overflow: hidden;
+	position: relative;
 }
+
 .intro-container .text-wrapper{
 	position: absolute;
 	width: auto;
@@ -23,34 +31,40 @@ Red: fc2930;
 	color: white;
 	top: 50%;
 	left: 50%;
+	margin-top: -30px;
 	text-align: center;
 	transform: translate(-50%, -50%);
 	z-index: 4;
 }
 .intro-container .text-wrapper h1{
 	font-family: 'CobraKai';
-	font-size: 80px;
+	font-size: 100px;
+	text-shadow: 0 0px 3px #000;
 	/*color: #05090c;*/
 	color: rgba(255,255,255,1);
-	margin-top: -30px;
-	transition: color 1s;
+	margin: 0 auto;
+	transition: color 1s, text-shadow 1s;
 }
 .intro-container:hover .text-wrapper h1{
 	color: #fc2930;
+	text-shadow: 0 5px 3px #000;
+
 }
 .intro-container .text-wrapper h2{
 	font-family: 'BebasKai';
-	margin: 0 auto;
-	font-size: 30px;
+	text-shadow: 0 0 0px #000;
+    margin: -10px auto 0 auto;
+	font-size: 40px;
 	letter-spacing: -0.05em;
 	color: rgba(255,255,255,.8);
-	transition: color 1s;
+	transition: color 1s, text-shadow 1s;
 }
 .intro-container:hover .text-wrapper h2{
 	color: #f4e150;
+	text-shadow: 0 0 5px #000;
 }
 
-.intro-container > div{
+.colored, .gray{
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -59,6 +73,9 @@ Red: fc2930;
 }
 .colored{
 	background-image: url("/images/jungle-sun-background.jpg");
+	transform: scale(1);
+	transition: transform 1s;
+	overflow: hidden;
 	z-index: 1;
 }
 .gray{
@@ -69,4 +86,91 @@ Red: fc2930;
 }
 .intro-container:hover .gray{
 	opacity: 0;
+}
+.intro-container:hover .colored{
+	transform: scale(1.2);
+	overflow: hidden;
+}
+.down-arrow{
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 30px;
+	width: 30px;
+	z-index: 5;
+	cursor: pointer;
+}
+.intro-container .down-arrow{
+	opacity: 0;
+	transition: opacity 1s;
+}
+.down-arrow path{
+	fill: #fff;
+}
+.intro-container:hover .down-arrow{
+	opacity: .6;
+}
+.intro-container:hover .down-arrow:hover{
+	opacity: 1;
+}
+.bio-container{
+	background-color: #fff;
+	height: 100%;
+	position: relative;
+}
+.bio-container > h1 {
+	text-align: center;
+	font-family: 'CobraKai';
+	font-size: 70px;
+	margin: 15px auto 0px auto;
+	color: #fc2930;
+	text-shadow: 0 0px 3px #000;
+}
+.bio-container > .content-wrapper{
+	display: flex;
+	align-items: stretch;
+}
+.bio-container > .content-wrapper > div {
+	flex: 1;
+	position: relative;
+}
+.hero-image {
+    padding: 10px 25px 25px 25px;
+	box-sizing: border-box;
+}
+.hero-image img{
+	max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,.8);
+}
+
+.bio-container > .content-wrapper > div.content {
+    margin: 10px 25px 25px 0;
+	padding: 15px;
+	box-sizing: border-box;
+	border-radius: 10px;
+/*	background-color: rgba(252, 41, 48, .6)*/
+	background-color: rgba(244, 225, 80, .8);
+	border: 2px solid #fc2930;
+/*	font-family: 'Plantin';
+*//*	box-shadow: 0 5px 5px rgba(252, 41, 48, .8)
+*/
+}
+.bio-item{
+	margin-bottom: 15px;
+}
+.bio-item .title {
+	text-decoration-style: block;
+	font-family: 'CobraKai';
+	font-size: 30px;
+	color: #fc2930;
+}
+.bio-item .description{
+	font-family: 'BebasKai';
+	font-size: 20px;
+}
+.bio-container .down-arrow path{
+	fill: #000;
 }

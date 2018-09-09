@@ -22,7 +22,7 @@
 	<!-- CSS End -->
 </head>
 <body>
-
+<div class="loader-overlay"></div>
 @yield('content')
 
 </body>

@@ -40,6 +40,7 @@ var eventJSON = {
 }
 
 $(document).ready(function(){
+	$('html, body').addClass('locked')
 	$('.down-arrow').click(function(){
 		var next = $(this).closest('.container').next().offset().top;
 		console.log($(this).closest('.container'))
@@ -86,4 +87,13 @@ $(document).ready(function(){
 			$('.header').removeClass('active');
 		}
 	}
+})
+
+$(window).load(function(){
+	//Will fire after images load. Hide all loaders
+	$('html, body').removeClass('locked');
+	//$('.loader-overlay').fadeOut(500);
+	setTimeout(function(){
+		$('.loader-overlay').fadeOut(500);
+	}, 500)
 })

@@ -1,6 +1,13 @@
 @extends('layout')
 
 @section('content')
+<div class="header">
+	<ul>
+		<li><a href="https://www.facebook.com/Boahbook/?ref=br_rs" target="_blank">@include('svgs/facebook')</a></li>
+		<li><a href="https://www.instagram.com/lee_thebiggsteve_boah_/" target="_blank">@include('svgs/instagram')</a></li>
+		<li><a href="mailto:leeboahofficial@gmail.com">@include('svgs/message')</a></li>
+	</ul>
+</div>
 <div class="intro-container container">
 	<div class="text-wrapper">
 		<h1>Lee Boah</h1>
@@ -48,7 +55,7 @@
 <div class="gallery-container container">
 	<h1>Gallery</h1>
 	<div class="content-wrapper">
-		<div class="owl-carousel owl-theme">
+		<ul class="owl-carousel owl-theme">
 			<li><img src="images/carousel-images/gallery-image-01b.jpg"></li>
 			<!-- <li><img src="images/carousel-images/gallery-image-02.jpg"></li> -->
 			<!-- <li><img src="images/carousel-images/gallery-image-03.jpg"></li> -->
@@ -63,7 +70,7 @@
 			<li><img src="images/carousel-images/gallery-image-12.jpg"></li>
 			<li><img src="images/carousel-images/gallery-image-13.jpg"></li>
 			<li><img src="images/carousel-images/gallery-image-14.jpg"></li>
-		</div>
+		</ul>
 	</div>
 	@include('nav-arrow')
 </div>

@@ -52,14 +52,38 @@ $(document).ready(function(){
 	$('.events-container.parallax-window').parallax({imageSrc: '/images/jungle-sun-background-blur-2.jpg'});
 	$('.divider.parallax-window').parallax({imageSrc: '/images/banner-02.jpg'});
 
-	$('.gallery-container .owl-carousel').owlCarousel({
+	var owl = $('.gallery-container .owl-carousel').owlCarousel({
 		autoplay: true,
 		autoplayHoverPause: true,
 		loop:true,
-		// nav: true,
+		touchDrag: true,
 		lazyLoad: true,
 		center: true,
 		items: 1.5,
 		margin: 30,
 	});
+
+	$('.owl-item').click(function(){
+		var activeEl = $('.gallery-container .owl-carousel .owl-item.active');
+		var active = $('.gallery-container .owl-carousel .owl-item').index($(activeEl));
+		var i = $('.gallery-container .owl-carousel .owl-item').index($(this));
+		console.log('click')
+		console.log(active)
+		console.log(i)
+		if (i == active + 1){
+			owl.trigger('next.owl.carousel');
+		} else if (i == active - 1){
+			owl.trigger('prev.owl.carousel');
+		}
+	})
+
+	$(window).scroll(displayHeader);
+
+	function displayHeader(){
+		if ($(window).scrollTop() > $(window).height()){
+			$('.header').addClass('active');
+		} else {
+			$('.header').removeClass('active');
+		}
+	}
 })

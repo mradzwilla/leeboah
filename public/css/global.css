@@ -17,6 +17,30 @@ html, body{
 Yellow: f4e150;
 Red: fc2930;
 */
+.header {
+	width: 164px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 999;
+	transform: translateY(-500px);
+	transition: all .3s;
+}
+.header.active {
+	transform: translateY(0px);
+}
+.header ul{
+	list-style: none;
+	display: flex;
+	padding: 5px;
+	margin: 0 auto;
+	background-color: rgba(255,255,255,.6);
+	border-bottom-left-radius: 10px;
+}
+.header ul > li{
+	flex: 1;
+	padding: 5px;
+}
 .intro-container {
 	width: 100%;
 	height: 100%;
@@ -298,10 +322,26 @@ ul#events-list h2, ul#events-list h3{
 	fill: #000;
 }
 .owl-carousel{
-	padding: 80px 0 90px 0;
+	padding: 65px 0 90px 0;
 }
 .owl-stage-outer{
 	padding-bottom: 10px;
+}
+.owl-carousel.owl-drag .owl-item{
+	opacity: .4;
+	transition: all .3s;
+}
+.owl-carousel.owl-drag .owl-item:hover:not(.center){
+	cursor: pointer;
+	opacity: .75;
+	transition: all .3s;
+}
+.owl-carousel.owl-drag .owl-item.active.center {
+	opacity: 1;
+}
+.owl-carousel.owl-drag .owl-item.active.center img {
+	box-shadow: 0 0 5px rgba(0,0,0,.8);
+	transition: all .3s;
 }
 .owl-theme .owl-dots .owl-dot span {
     background: rgba(252, 41, 48, .2);

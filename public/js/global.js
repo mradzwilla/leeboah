@@ -51,32 +51,44 @@ $(document).ready(function(){
 		$('ul#events-list').append(item)
 	})
 	$('.events-container.parallax-window').parallax({imageSrc: '/images/jungle-sun-background-blur-2.jpg'});
-	$('.divider.parallax-window').parallax({imageSrc: '/images/banner-02.jpg'});
+	$('.divider.parallax-window').parallax({
+		imageSrc: '/images/banner-02.jpg',
+	});
 
 	var owl = $('.gallery-container .owl-carousel').owlCarousel({
+		responsive: {
+			0: {
+				items: 1,
+				stagePadding: 30
+			},
+			801: {
+				items: 1.5,
+				stagePadding: 0,
+				margin: 30
+			}
+		},
 		autoplay: true,
 		autoplayHoverPause: true,
 		loop:true,
 		touchDrag: true,
 		lazyLoad: true,
 		center: true,
-		items: 1.5,
 		margin: 30,
+		onInitialized: bindHandlers,
 	});
 
-	$('.owl-item').click(function(){
-		var activeEl = $('.gallery-container .owl-carousel .owl-item.active');
-		var active = $('.gallery-container .owl-carousel .owl-item').index($(activeEl));
-		var i = $('.gallery-container .owl-carousel .owl-item').index($(this));
-		console.log('click')
-		console.log(active)
-		console.log(i)
-		if (i == active + 1){
-			owl.trigger('next.owl.carousel');
-		} else if (i == active - 1){
-			owl.trigger('prev.owl.carousel');
-		}
-	})
+	function bindHandlers(){
+		$('.owl-item').click(function(){
+			var activeEl = $('.gallery-container .owl-carousel .owl-item.active');
+			var active = $('.gallery-container .owl-carousel .owl-item').index($(activeEl));
+			var i = $('.gallery-container .owl-carousel .owl-item').index($(this));
+			if (i == active + 1){
+				owl.trigger('next.owl.carousel');
+			} else if (i == active - 1){
+				owl.trigger('prev.owl.carousel');
+			}
+		})
+	}
 
 	$(window).scroll(displayHeader);
 
@@ -90,9 +102,7 @@ $(document).ready(function(){
 })
 
 $(window).load(function(){
-	//Will fire after images load. Hide all loaders
 	$('html, body').removeClass('locked');
-	//$('.loader-overlay').fadeOut(500);
 	setTimeout(function(){
 		$('.loader-overlay').fadeOut(500);
 	}, 500)

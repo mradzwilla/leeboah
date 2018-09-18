@@ -30,9 +30,7 @@ html.locked, body.locked{
 	background-color: #000;
 	transition: all 1s;
 }
-/*.loader-overlay.loaded{
-	opacity: 0;
-}*/
+
 .header {
 	width: 164px;
 	position: fixed;
@@ -156,15 +154,14 @@ html.locked, body.locked{
 }
 .bio-container{
 	background-color: #fff;
- 	min-height: 100%;
-    padding-bottom: 30px;
+    padding: 40px 0 25px 0;
 	position: relative;
 }
 .bio-container > h1 {
 	text-align: center;
 	font-family: 'CobraKai';
 	font-size: 70px;
-	margin: 15px auto 0px auto;
+	margin: 0 auto 25px auto;
 	color: #fc2930;
 	text-shadow: 0 0px 3px #000;
 }
@@ -213,26 +210,16 @@ html.locked, body.locked{
 }
 .events-container.parallax-window {
 	height: auto;
-    min-height: 100%;
+    padding: 40px;
     background: transparent;
     position: relative;
 }
-.parallax-window .overlay{
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	background-color: rgba(0,0,0,.4)
-}
-/*.events-container{
-	position: relative;
-	height: 100%;
-}*/
+
 .events-container h1{
 	color: #f4e150;
 	font-family: 'CobraKai';
 	font-size: 70px;
-	margin: 0 auto;
-	padding-top: 25px;
+	margin: 0 auto 25px auto;
 	text-align: center;
 	transition: all .3s;
 }
@@ -240,14 +227,14 @@ ul#events-list{
 	list-style: none;
 	margin: 0 auto;
 	max-width: 600px;
-	padding-top: 0px;
-	padding-bottom: 45px;
+	padding: 0 0 45px 0px;
 }
 ul#events-list li {
+	max-width: 90%;
     background-color: rgba(255,255,255,.6);
     padding: 25px 0;
     border-radius: 10px;
-    margin: 15px 0;
+    margin: 15px auto;
     transition: all .3s;
 }
 ul#events-list li:hover {
@@ -267,6 +254,7 @@ ul#events-list a h1{
 	color: #fc2930;
 	font-family: 'CobraKai';
 	font-size: 35px;
+	margin: 0 10px 5px 10px;
 	text-align: center;
 	text-decoration: none;
 	padding-top: 0px;
@@ -275,12 +263,12 @@ ul#events-list h2, ul#events-list h3{
 	text-align: center;
 	font-family: 'BebasKai';
 	color: rgba(0,0,0,.8);
-	margin: 0 auto;
+	margin: 0 10px 5px 10px;
 }
 .social-container{
 	background-color: #fff;
-	height: 50%;
 	position: relative;
+	padding: 40px 0;
 }
 .social-container ul {
 	list-style: none;
@@ -308,14 +296,14 @@ ul#events-list h2, ul#events-list h3{
 	font-family: 'CobraKai';
 	color: #fc2930;
 	font-size: 70px;
-	margin-top: 25px;
+	margin: 0 auto;
 }
 .divider.parallax-window{
 	height: 80%;
 }
 .gallery-container{
 	background-color: #fff;
- 	min-height: 100%;
+ 	padding: 40px 0;
 	position: relative;
 	overflow: hidden;
 }
@@ -324,7 +312,7 @@ ul#events-list h2, ul#events-list h3{
 	text-align: center;
 	font-family: 'CobraKai';
 	font-size: 70px;
-	margin: 25px auto 0px auto;
+	margin: 0 auto;
 	color: #fc2930;
 	text-shadow: 0 0px 3px #000;
 }
@@ -338,10 +326,11 @@ ul#events-list h2, ul#events-list h3{
 	fill: #000;
 }
 .owl-carousel{
-	padding: 65px 0 90px 0;
+	/*padding: 65px 0 90px 0;*/
+	padding: 40px 0 55px 0;
 }
 .owl-stage-outer{
-	padding-bottom: 10px;
+	/*padding-bottom: 10px;*/
 }
 .owl-carousel.owl-drag .owl-item{
 	opacity: .4;
@@ -382,4 +371,16 @@ ul#events-list h2, ul#events-list h3{
 	font-family: 'CobraKai';
 	font-size: 25px;
 	padding-left: 3px;
+}
+
+@media only screen and (max-width: 800px) {
+	.bio-container > .content-wrapper{
+		flex-direction: column;
+	}
+	.bio-container > .content-wrapper > div.content {
+    	margin:  10px 25px 25px 25px;
+    }
+    .gallery-container {
+    	min-height: auto;
+    }
 }

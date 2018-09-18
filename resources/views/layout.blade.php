@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<title>Lee Boah</title>
 
 	<!-- Favicons Start -->
@@ -22,6 +24,7 @@
 	<!-- CSS End -->
 </head>
 <body>
+
 <div class="loader-overlay"></div>
 @yield('content')
 
